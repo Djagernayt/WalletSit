@@ -1,0 +1,33 @@
+# Общие файлы для исключения
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+node_modules/
+.env
+.vscode/
+.idea/
+
+# Для Python проектов
+__pycache__/
+*.pyc
+venv/
+.pytest_cache/
+
+# Для JavaScript/Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# Для Java
+*.class
+target/
+*.jar
+
+# Для C#/.NET
+bin/
+obj/
+*.exe
+*.dll

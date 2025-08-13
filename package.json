@@ -1,0 +1,88 @@
+{
+  "name": "SitiFehuWallet",
+  "version": "1.0.7",
+  "description": "Кошелек",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run build && electron .",
+    "build": "webpack --mode production",
+    "dev": "concurrently \"npm run build -- --watch\" \"npm run electron\"",
+    "electron": "electron .",
+    "dist": "npm run build && electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "electron-store": "^10.0.0",
+    "ethers": "^6.13.4",
+    "express": "^4.21.1",
+    "i18next": "^24.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.4.1",
+    "react-icons": "^5.3.0",
+    "react-modal": "^3.16.1",
+    "react-toastify": "^10.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "assert": "^2.1.0",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "browserify-zlib": "^0.2.0",
+    "concurrently": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "crypto-browserify": "^3.12.0",
+    "css-loader": "^7.1.2",
+    "electron": "^32.2.0",
+    "electron-builder": "^25.0.5",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "path-browserify": "^1.0.1",
+    "postcss": "^8.4.47",
+    "postcss-loader": "^8.1.1",
+    "stream-browserify": "^3.0.0",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.13",
+    "util": "^0.12.5",
+    "vm-browserify": "^1.1.2",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "build": {
+    "appId": "Wallet",
+    "productName": "SitFehuWallet",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "public/**/*",
+      "server/**/*",
+      "preload/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": "nsis",
+      "icon": "assets/logo.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "keywords": [],
+  "author": "Radmir SIT",
+  "license": "ISC"
+}
